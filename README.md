@@ -12,7 +12,7 @@ There are of course many more efficient and specialized software out there, but 
 |---------------|-----------|-----------|
 | base64        | ❌        | ❌        |
 | ascii85       | ❌        | ❌        |
-| uuencoding    | ❌        | ✅        |
+| uuencoding    | ✅        | ✅        |
 
 ### Hash algorithms
 
