@@ -1,6 +1,6 @@
-# Hackit
+# 🧰 Hackit
 
-Hacking toolkit and utilities.
+> Hacking toolkit and utilities.
 
 There are of course many more efficient and specialized software out there, but this was mainly created for learning purposes.
 
@@ -24,3 +24,11 @@ There are of course many more efficient and specialized software out there, but 
 ### Ciphers
 
 Ideas: Caesar, Vigenere, ...
+
+## Usage
+
+The tool is consumed via the command-line interface.
+
+```bash
+$ hackit uu decode '...'
+````
