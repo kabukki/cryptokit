@@ -8,11 +8,11 @@ There are of course many more efficient and specialized software out there, but 
 
 ### Encodings
 
-| Name      | Encode  | Decode  |
-|-----------|---------|---------|
-| base64    | ❌       | ❌     |
-| ascii85   | ❌       | ❌     |
-| uuencode  | ❌       | ❌     |
+| Name          | Encode    | Decode    |
+|---------------|-----------|-----------|
+| base64        | ❌        | ❌        |
+| ascii85       | ❌        | ❌        |
+| uuencoding    | ❌        | ✅        |
 
 ### Hash algorithms
 
