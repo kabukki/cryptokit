@@ -10,9 +10,9 @@ There are of course many more efficient and specialized software out there, but 
 
 | Name          | Encode    | Decode    |
 |---------------|-----------|-----------|
-| base64        | ❌        | ❌        |
-| ascii85       | ❌        | ❌        |
+| base64        | ✅        | ✅        |
 | uuencoding    | ✅        | ✅        |
+| ascii85       | ❌        | ❌        |
 
 ### Hash algorithms
 
