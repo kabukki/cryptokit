@@ -36,7 +36,7 @@ fn main() {
         ("uu", Some(matches)) => {
             match matches.subcommand() {
                 ("encode", Some(matches)) => {
-                    let clear = matches.value_of("string").unwrap();
+                    let clear = matches.value_of("string").unwrap().as_bytes();
                     println!("{}", uu::encode(clear));
                 },
                 ("decode", Some(matches)) => {
