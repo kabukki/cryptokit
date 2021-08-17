@@ -20,7 +20,7 @@ func EncodeUU(clear string) string {
 func DecodeUU(encoded string) string {
 	length := encoded[0] - 32
 	fixed := []byte(encoded[1:])
-	encoding := base64.NewEncoding(CHARSET).WithPadding(' ')
+	encoding := base64.NewEncoding(CHARSET).WithPadding(base64.NoPadding)
 
 	decoded := make([]byte, encoding.DecodedLen(len(fixed)))
 	encoding.Decode(decoded, fixed)
