@@ -22,15 +22,6 @@ func DecodeUU(encoded string) string {
 	fixed := []byte(encoded[1:])
 	encoding := base64.NewEncoding(CHARSET).WithPadding(' ')
 
-	// Use new padding character
-	for n := len(fixed) - 1; n > 0; n-- {
-		if fixed[n] == '`' {
-			fixed[n] = ' '
-		} else {
-			break
-		}
-	}
-
 	decoded := make([]byte, encoding.DecodedLen(len(fixed)))
 	encoding.Decode(decoded, fixed)
 
