@@ -56,6 +56,27 @@ func main() {
 	})
 	app.AddCommand(cmdUU)
 
+	// Hex
+	cmdHex := &cobra.Command{
+		Use:   "hex",
+		Short: "Hexadecimal encoding",
+	}
+	cmdHex.AddCommand(&cobra.Command{
+		Use:  "encode [clear]",
+		Args: cobra.ExactArgs(1),
+		Run: func(cmd *cobra.Command, args []string) {
+			fmt.Println(encoding.EncodeHex(args[0]))
+		},
+	})
+	cmdHex.AddCommand(&cobra.Command{
+		Use:  "decode [encoded]",
+		Args: cobra.ExactArgs(1),
+		Run: func(cmd *cobra.Command, args []string) {
+			fmt.Println(encoding.DecodeHex(args[0]))
+		},
+	})
+	app.AddCommand(cmdHex)
+
 	// MD5
 	cmdMD5 := &cobra.Command{
 		Use:   "md5",

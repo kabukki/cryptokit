@@ -13,6 +13,7 @@ There are of course many more efficient and specialized software out there, but 
 | base64        | ✅        | ✅        |
 | uuencoding    | ✅        | ✅        |
 | ascii85       | ❌        | ❌        |
+| hex           | ✅        | ✅        |
 
 ### Hash algorithms
 
