@@ -7,7 +7,7 @@ import (
 
 const CHARSET = "`!\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_"
 
-func EncodeUU(clear string) string {
+func UUEncode(clear string) string {
 	encoding := base64.NewEncoding(CHARSET).WithPadding(' ')
 
 	encoded := make([]byte, encoding.EncodedLen(len(clear)))
@@ -17,7 +17,7 @@ func EncodeUU(clear string) string {
 	return strings.ReplaceAll(string(encoded), " ", "`")
 }
 
-func DecodeUU(encoded string) string {
+func UUDecode(encoded string) string {
 	length := encoded[0] - 32
 	fixed := []byte(encoded[1:])
 	encoding := base64.NewEncoding(CHARSET).WithPadding(base64.NoPadding)

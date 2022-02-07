@@ -15,16 +15,20 @@ There are of course many more efficient and specialized software out there, but 
 | ascii85       | ❌        | ❌        |
 | hex           | ✅        | ✅        |
 
-### Hash algorithms
+### Cryptography
 
-| Name      | Encode  | Crack   |
+| Name      | Hash      | Crack |
 |-----------|---------|---------|
-| MD5       | ❌       | ❌     |
-| DCC       | ❌       | ❌     |
+| MD5       | ❌        | ❌     |
+| DCC       | ❌        | ❌     |
 
 ### Ciphers
 
 Ideas: Caesar, Vigenere, ...
+
+### Network
+
+...
 
 ## Usage
 

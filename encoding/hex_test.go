@@ -16,18 +16,18 @@ var testsHex = map[string]string{
 	"Hello World": "48656c6c6f20576f726c64",
 }
 
-func TestEncodeHex(t *testing.T) {
+func TestHexEncode(t *testing.T) {
 	for clear, expected := range testsHex {
-		actual := EncodeHex(clear)
+		actual := HexEncode(clear)
 		if actual != expected {
 			t.Fatalf(`"%s": Expected "%s" %v, actual "%s" %v`, clear, expected, []byte(expected), actual, []byte(actual))
 		}
 	}
 }
 
-func TestDecodeHex(t *testing.T) {
+func TestHexDecode(t *testing.T) {
 	for expected, encoded := range testsHex {
-		actual := DecodeHex(encoded)
+		actual := HexDecode(encoded)
 		if actual != expected {
 			t.Fatalf(`"%s": Expected "%s" %v, actual "%s" %v`, encoded, expected, []byte(expected), actual, []byte(actual))
 		}

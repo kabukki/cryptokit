@@ -17,18 +17,18 @@ var testsBase64 = map[string]string{
 	"Hello World": "SGVsbG8gV29ybGQ=",
 }
 
-func TestEncodeBase64(t *testing.T) {
+func TestBase64Encode(t *testing.T) {
 	for clear, expected := range testsBase64 {
-		actual := EncodeBase64(clear)
+		actual := Base64Encode(clear)
 		if actual != expected {
 			t.Fatalf(`"%s": Expected "%s" %v, actual "%s" %v`, clear, expected, []byte(expected), actual, []byte(actual))
 		}
 	}
 }
 
-func TestDecodeBase64(t *testing.T) {
+func TestBase64Decode(t *testing.T) {
 	for expected, encoded := range testsBase64 {
-		actual := DecodeBase64(encoded)
+		actual := Base64Decode(encoded)
 		if actual != expected {
 			t.Fatalf(`"%s": Expected "%s" %v, actual "%s" %v`, encoded, expected, []byte(expected), actual, []byte(actual))
 		}

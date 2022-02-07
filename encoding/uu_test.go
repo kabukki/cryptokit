@@ -16,18 +16,18 @@ var testsUU = map[string]string{
 	"Hello World": "+2&5L;&\\@5V]R;&0`",
 }
 
-func TestEncodeUU(t *testing.T) {
+func TestUUEncode(t *testing.T) {
 	for clear, expected := range testsUU {
-		actual := EncodeUU(clear)
+		actual := UUEncode(clear)
 		if actual != expected {
 			t.Fatalf(`"%s": Expected "%s" %v, actual "%s" %v`, clear, expected, []byte(expected), actual, []byte(actual))
 		}
 	}
 }
 
-func TestDecodeUU(t *testing.T) {
+func TestUUDecode(t *testing.T) {
 	for expected, encoded := range testsUU {
-		actual := DecodeUU(encoded)
+		actual := UUDecode(encoded)
 		if actual != expected {
 			t.Fatalf(`"%s": Expected "%s" %v, actual "%s" %v`, encoded, expected, []byte(expected), actual, []byte(actual))
 		}
