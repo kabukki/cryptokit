@@ -22,9 +22,11 @@ func MD5Bruteforce(digest string) string {
 	return digest
 }
 
-// func Dictionary () {}
-
 func MD5Hash(clear string) string {
 	digest := md5.Sum([]byte(clear))
 	return hex.EncodeToString(digest[:])
 }
+
+// func Dictionary () {}
+
+// func RainbowTables - stored somewhere
