@@ -22,9 +22,9 @@
 
 ### Formatting
 
-| Name      | Pretty    | Compact   |
-|-----------|-----------|-----------|
-| JSON      | ✅        | ✅        |
+| Name      | Prettify    | Compact | Validate  |
+|-----------|-------------|---------|-----------|
+| JSON      | ✅          | ✅       | ✅        |
 
 ### Miscellaneous
 
