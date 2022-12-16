@@ -102,15 +102,9 @@ fn main () {
             Base64::Decode { input } => hackit::base64::decode(input).inspect(|output| println!("{output}")).err(),
         },
         Action::Dns (action) => match action {
-            Dns::Resolve { host } => {
-                let res = hackit::dns::resolve(host);
-                
-                if let Ok(addresses) = res.clone() {
-                    println!("{}", addresses.iter().map(|ip| format!("- {ip}")).collect::<Vec<String>>().join("\n"));
-                }
-
-                res.err()
-            },
+            Dns::Resolve { host } => hackit::dns::resolve(host).inspect(|addresses| {
+                println!("{}", addresses.iter().map(|ip| format!("- {ip}")).collect::<Vec<String>>().join("\n"));
+            }).err()
         },
         Action::Hex (action) => match action {
             Hex::Encode { input } => hackit::hex::encode(input).inspect(|output| println!("{output}")).err(),
@@ -130,23 +124,20 @@ fn main () {
             Md5::Hash { input } => hackit::md5::hash(&input).inspect(|output| println!("{output}")).err(),
         },
         Action::Network (action) => match action {
-            Network::Config => {
-                let res = hackit::network::config();
-                if let Ok(mut interfaces) = res.clone() {
-                    interfaces.sort_by(|a, b| a.name.cmp(&b.name));
-                    for interface in interfaces {
-                        println!("{}: {}",
-                            if interface.is_up() { interface.name.green() } else { interface.name.red() },
-                            if let Some(mac) = interface.mac { mac.to_string() } else { format!("(no MAC)") },
-                        );
+            Network::Config => hackit::network::config().inspect(|interfaces| {
+                let mut interfaces = interfaces.clone();
+                interfaces.sort_by(|a, b| a.name.cmp(&b.name));
+                for interface in interfaces {
+                    println!("{}: {}",
+                        if interface.is_up() { interface.name.green() } else { interface.name.red() },
+                        if let Some(mac) = interface.mac { mac.to_string() } else { format!("(no MAC)") },
+                    );
 
-                        if interface.ips.len() > 0 {
-                            println!("{}", interface.ips.iter().map(|ip| format!("  - {ip}")).collect::<Vec<String>>().join("\n"));
-                        }
+                    if interface.ips.len() > 0 {
+                        println!("{}", interface.ips.iter().map(|ip| format!("  - {ip}")).collect::<Vec<String>>().join("\n"));
                     }
                 }
-                res.err()
-            },
+            }).err(),
             Network::Traceroute { destination: _ } => hackit::network::traceroute().inspect(|output| println!("{output}")).err(),
         },
         Action::Uu (action) => match action {
