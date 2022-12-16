@@ -1,6 +1,6 @@
 # ![Hackit](./assets/logo.png)
 
-**Hackit** is a hacking and utilities toolkit. There are of course many more efficient and specialized software out there, but this was mainly created for learning purposes to practice secutiry concepts, Rust and unit tests.
+**Hackit** is a hacking and utilities toolkit. There are of course many more efficient and specialized software out there, but this was mainly created for learning purposes to practice security concepts, the Rust language and unit tests.
 
 ## Features
 
