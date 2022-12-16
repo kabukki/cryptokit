@@ -1,34 +1,27 @@
 # ![Hackit](./assets/logo.png)
 
-**Hackit** is a hacking and utilities toolkit. There are of course many more efficient and specialized software out there, but this was mainly created for learning purposes to practice Go and unit tests.
+**Hackit** is a hacking and utilities toolkit. There are of course many more efficient and specialized software out there, but this was mainly created for learning purposes to practice secutiry concepts, Rust and unit tests.
 
 ## Features
 
-### Encodings
-
-| Name          | Encode    | Decode    |
-|---------------|-----------|-----------|
-| base64        | ✅        | ✅        |
-| uuencoding    | ✅        | ✅        |
-| ascii85       | ❌        | ❌        |
-| hex           | ✅        | ✅        |
-
-### Cryptography
-
-| Name      | Hash      | Crack |
-|-----------|---------|---------|
-| MD5       | ✅        | ❌     |
-| DCC       | ❌        | ❌     |
-
-### Formatting
-
-| Name      | Prettify    | Compact | Validate  |
-|-----------|-------------|---------|-----------|
-| JSON      | ✅          | ✅       | ✅        |
-
-### Miscellaneous
-
-- **strlen**
+- **Encoding**: encode, decode
+  - base64
+  - uuencoding
+  - hexadecimal
+  - URL encoding
+  - ~~ascii85 ...~~
+- **Cryptography**: hash
+  - MD5
+  - ~~DCC, SHA-1, ...~~
+- **Formatting**: prettify, stringify, validate
+  - JSON
+- **Networking**
+  - Traceroute
+- **DNS**
+  - Resolve
+  - ~~Record lookup~~
+- **Utilities**
+  - strlen
 
 ## Usage
 
@@ -47,5 +40,5 @@ $ cat package.json | xargs -0 hackit json compact | xargs -0 hackit md5 hash | x
 
 ## Ideas
 
-- Ciphers: Caesar, Vigenere, ...
+- Ciphers: Caesar, Vigenere, vernam ...
 - Network tools
