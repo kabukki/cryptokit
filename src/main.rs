@@ -130,10 +130,10 @@ fn main () {
                 for interface in interfaces {
                     println!("{}: {}",
                         if interface.is_up() { interface.name.green() } else { interface.name.red() },
-                        if let Some(mac) = interface.mac { mac.to_string() } else { format!("(no MAC)") },
+                        if let Some(mac) = interface.mac { mac.to_string() } else { "(no MAC)".to_string() },
                     );
 
-                    if interface.ips.len() > 0 {
+                    if !interface.ips.is_empty() {
                         println!("{}", interface.ips.iter().map(|ip| format!("  - {ip}")).collect::<Vec<String>>().join("\n"));
                     }
                 }

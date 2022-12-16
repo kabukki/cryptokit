@@ -5,7 +5,7 @@ pub fn encode (input: String) -> ActionResult<String> {
 }
 
 pub fn decode (input: String) -> ActionResult<String> {
-    let bytes = data_encoding::BASE64.decode(&input.as_bytes()).map_err(|err| err.to_string())?;
+    let bytes = data_encoding::BASE64.decode(input.as_bytes()).map_err(|err| err.to_string())?;
     String::from_utf8(bytes).map_err(|err| err.to_string())
 }
 

@@ -46,7 +46,7 @@ pub fn traceroute () -> ActionResult<String> {
         icmp.set_identifier(0xabcd);
         icmp.set_sequence_number(0);
         icmp.set_icmp_type(pnet::packet::icmp::IcmpTypes::EchoRequest);
-        icmp.set_checksum(pnet::util::checksum(&icmp.packet(), 1));
+        icmp.set_checksum(pnet::util::checksum(icmp.packet(), 1));
 
         println!("{icmp:?} {:?}", icmp.packet());
         tx.send_to(icmp, std::net::IpAddr::V4(destination)).unwrap();

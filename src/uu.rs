@@ -3,7 +3,7 @@ use crate::ActionResult;
 fn get_encoding (padding: bool) -> data_encoding::Encoding {
     let mut spec = data_encoding::Specification::new();
     spec.symbols.push_str("`!\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_");
-    spec.padding = if padding == true { Some(' ') } else { None };
+    spec.padding = if padding { Some(' ') } else { None };
     spec.encoding().unwrap()
 }
 
@@ -12,7 +12,7 @@ pub fn encode (input: String) -> ActionResult<String> {
     let mut output = encoding.encode(input.as_bytes());
     output.insert(0, (input.len() as u8 + 32) as char);
 
-    Ok(output.replace(" ", "`"))
+    Ok(output.replace(' ', "`"))
 }
 
 pub fn decode (input: String) -> ActionResult<String> {
